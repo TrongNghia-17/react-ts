@@ -3,7 +3,7 @@ import TodoData from "./todo.data";
 import TodoInput from "./todo.input";
 
 interface ITodo {
-    id: number,
+    id: number;
     title: string;
     isComplete: boolean;
 }
@@ -29,6 +29,10 @@ const TodoList = () => {
 
     const [listTodo, setListTodo] = useState<ITodo[]>([])
 
+    const addNewTodo = (todo: ITodo) => {
+        setListTodo([...listTodo, todo]);
+    }
+
     return (
         <div style={{
             width: "600px",
@@ -47,7 +51,8 @@ const TodoList = () => {
             </div>
             <br />
             <TodoInput
-            // name="your todo"
+                // name="your todo"
+                addNewTodo={addNewTodo}
             />
             <TodoData
                 todos={listTodo}
