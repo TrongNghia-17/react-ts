@@ -4,9 +4,6 @@ function Layout() {
 
   return (
     <>
-      <div>
-        Hello NghiaHt
-      </div>
       <TodoList />
     </>
   )
